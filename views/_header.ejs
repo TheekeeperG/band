@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html style="min-height: 100%; background-color: rgba(1, 9, 31, 0.664)">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock Nation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+</head>
+
+<body class="has-background-dark" style="height: 120%">
+  <nav class="navbar is-fixed-top" style="background-color: rgba(1, 9, 31, 0.664)">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <h4 class="title is-4" style="color:whitesmoke;">Rock Nation</h4>
+      </a>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item " href="https://bulma.io/">
+          <hr class="navbar-divider">
+          <h5 class="title is-6 has-text-light">Home</h5>
+        </a>
+
+        <a class="navbar-item " href="https://bulma.io/">
+          <hr class="navbar-divider">
+          <h5 class="title is-6 has-text-light">Home</h5>
+        </a>
+
+        <a class="navbar-item " href="https://bulma.io/">
+          <hr class="navbar-divider">
+          <h5 class="title is-6 has-text-light">Home</h5>
+        </a>
+
+      </div>
+      <% if(!currentBand) { %>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+
+              <p class="control">
+                <a class="button bd-tw-button is-black" href="/login">
+                  <span class="icon">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                  <span>Log in </span>
+                </a>
+              </p>
+
+              <p class="control">
+                <a class="button bd-tw-button is-black" href="/signup">
+                  <span class="icon">
+                    <i class="fas fa-sign-in-alt"></i>
+                  </span>
+                  <span>Sign in</span>
+                </a>
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+        <% }else { %>
+          <% if(currentBand.bandname=="") { %>
+            <p class="control">
+              <a class="button bd-tw-button is-black" href="/addBand">
+                <span class="icon">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+                <span>Agregar banda </span>
+              </a>
+            </p>
+            <%}%>
+              <p class="control">
+                <a class="button bd-tw-button is-black" href="/logout">
+                  <span class="icon">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                  <span>Log out </span>
+                </a>
+              </p>
+              <% }%>
+    </div>
+  </nav>
+  <br>
+  <br>

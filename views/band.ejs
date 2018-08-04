@@ -1,0 +1,101 @@
+<%- include _header %>
+
+  <form id="uploadForm" enctype="multipart/form-data" action="/addBand" method="post">
+    <div class="column is-half is-offset-one-quarter is-black  has-text-centered">
+      <div class="notification has-text-centered" style="background-color: rgba(16, 16, 16, 0.6)">
+          <div style="margin-left:5%" class="field is-black is-grouped">
+              <div class="field is-black" style="margin-right: 10%;">
+                  <label class="label" style=" color: whitesmoke">Band name</label>
+                  </div>
+                  <div class="field is-black">
+                      <input  name="BandName" class="input" type="text" placeholder="Band name">
+                    </div>
+                </div>
+
+        <div style="margin-left:15%" class="field is-black ">
+      
+
+            <div class="file has-name ">
+              <label class="file-label">
+                <input CLASS="file-input" name="pes" type="file" id="fileName" accept=".jpg,.jpeg,.png" onchange="validateFileType()" required
+                />
+
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                  </span>
+                  <span class="file-label">
+                    Choose an image
+                  </span>
+                </span>
+                <span id="file-image" class="file-name">
+                </span>
+              </label>
+            </div>
+            </div>
+            <div style="margin-left:15%" class="field is-black">
+            <script type="text/javascript">
+              function validateFileType() {
+                var fileName = document.getElementById("fileName").value;
+                var idxDot = fileName.lastIndexOf(".") + 1;
+                var namexDot = fileName.lastIndexOf("\\") + 1;
+                var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+                var FileX = fileName.substr(namexDot, idxDot).toLowerCase();
+                if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+                  document.getElementById("file-image").innerHTML = FileX;
+                } else {
+                  alert("Solo imagenes!");
+                  document.getElementById("fileName").value = "";
+                  document.getElementById("file-image").innerHTML = "";
+                }
+              }
+            </script>
+            <div class="file has-name">
+              <label class="file-label">
+                <input name="pes" CLASS="file-input" type="file" id="fileName1" accept=".mp3" onchange="validateFileType1()" required/>
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                  </span>
+                  <span class="file-label">
+                    Choose a song&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </span>
+                </span>
+                <span id="file-audio" class="file-name">
+
+                </span>
+              </label>
+            </div>
+            <script type="text/javascript">
+              function validateFileType1() {
+                var fileName = document.getElementById("fileName1").value;
+                var idxDot = fileName.lastIndexOf(".") + 1;
+                var namexDot = fileName.lastIndexOf("\\") + 1;
+                var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+                var FileX = fileName.substr(namexDot, idxDot).toLowerCase();
+                if (extFile == "mp3") {
+                  document.getElementById("file-audio").innerHTML = FileX;
+                } else {
+
+                  alert("Solo audio!");
+                  document.getElementById("fileName1").value = "";
+
+                  document.getElementById("file-audio").innerHTML = "";
+                }
+              }
+            </script>
+          </div>
+          <input id="btnSub" style="margin-left:35%; "class="button" type="submit" value="Upload Image" name="submit">
+
+          
+          <br>
+          <span id="status"></span>
+        </div>
+      </div>
+    </div>
+  </form>
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+
+  </html>

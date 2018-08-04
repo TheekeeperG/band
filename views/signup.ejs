@@ -1,0 +1,70 @@
+<%- include _header %>
+
+<form ref='signup' 
+id='signup' 
+action='/signup' 
+method="post"
+
+        <div class="column is-half is-offset-one-quarter is-black">
+            <div class="notification" style="background-color: rgba(16, 16, 16, 0.6)">
+
+                <div class="field is-black">
+                    <label class="label" style=" color: whitesmoke">Username</label>
+
+                    <div class="control has-icons-left has-icons-right">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <input value ="" name="Username" class="input" style="background-color:rgba(16, 16, 16, 0.9); color: whitesmoke" type="text" placeholder="Username" required autofocus/>
+                    </div>
+
+                </div>
+
+                <div class="field is-black">
+                    <label class="label" style=" color: whitesmoke">Email</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+
+                        <input name="Email" class="input" style="background-color:rgba(16, 16, 16, 0.9); color: whitesmoke" type="email" placeholder="Email ">
+                    </div>
+                </div>
+
+                <div class="field is-black">
+                    <label class="label" style=" color: whitesmoke">Password</label>
+                    <p class="control has-icons-left">
+                        <input value ="" name="Password" class="input" style="background-color:rgba(16, 16, 16, 0.9); color: whitesmoke" type="password" placeholder="Password ">
+
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field is-black">
+                    <label class="label" style=" color: whitesmoke">Description</label>
+                    <div class="control">
+                        <input name="Description" class="input" style="background-color:rgba(16, 16, 16, 0.9); color: whitesmoke" type="text" placeholder="Description ">
+                    </div>
+                </div>
+
+
+                <div class="field is-black">
+                    <input class="input" name="btn" value="Sign in" style="background-color:rgba(16, 16, 16, 0.9); color: whitesmoke" type="submit"
+                        placeholder="Password ">
+
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+        </div>
+</form>
+
+    </body>
+<%- include _footer %>

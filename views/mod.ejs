@@ -1,0 +1,179 @@
+<%- include _header %>
+    <% var j=0 %>
+        <% info.forEach((infos) => {%>
+            <%if (infos.status==0){%>
+                <%if (j==0){%>
+
+
+                    <div class="columns">
+                        <div class="column is-one-third">
+
+                                <div class="card">
+                                        <div class="card-image">
+                                            <figure class="image is-4by3">
+                                                <img src="/public/uploads/<%= infos.image %>" alt="Placeholder image"> </figure>
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <figure class="image is-48x48">
+                                                        <img src="/public/uploads/<%= infos.image %>" alt="Placeholder image">
+                                                    </figure>
+                                                </div>
+                                                <div class="media-content">
+                                                    <p class="title is-4">
+                                                        <%=infos.name%>
+                                                    </p>
+                                                    <p class="subtitle is-6">
+                                                        <%=infos.username%>
+                                                    </p>
+                                                </div>
+                                            </div>
+        
+                                            <div class="content">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                                <br>
+                                                <br>
+                                                <audio controls>
+                                                        <source src=" /public/uploads/<%=infos.sample%>" type="audio/mpeg"> Your browser does not support the audio element.
+                                                    </audio>
+                                                    <br> <br>
+                                                <div class="field is-grouped">
+                                                    <form id="uploadForm1" action="/accept" method="post" style="margin-right: 15%">
+                                                        <input type="hidden" name="username1" value="<%=infos.username%>">
+                                                        <input type="submit" class="button is-success" name="actionb" value="ACCEPT" />
+        
+                                                        
+                                                    </form>
+        
+                                                    <form id="uploadForm2" action="/delete" method="post" style="margin-left: 25%">
+                                                        <input type="hidden" name="username2" value="<%=infos.username%>">
+                                                        <input type="submit" class="button is-danger" name="actionb" value="DELETE" />
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                        </div>
+
+
+                        <%j++; }else if (j==1){%>
+
+
+                            <div class="column is-one-third">
+
+                                    <div class="card">
+                                            <div class="card-image">
+                                                <figure class="image is-4by3">
+                                                    <img src="/public/uploads/<%= infos.image %>" alt="Placeholder image"> </figure>
+                                                </figure>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="media">
+                                                    <div class="media-left">
+                                                        <figure class="image is-48x48">
+                                                            <img src="/public/uploads/<%= infos.image %>" alt="Placeholder image">
+                                                        </figure>
+                                                    </div>
+                                                    <div class="media-content">
+                                                        <p class="title is-4">
+                                                            <%=infos.name%>
+                                                        </p>
+                                                        <p class="subtitle is-6">
+                                                            <%=infos.username%>
+                                                        </p>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="content">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                                    <br>
+                                                    <br>
+                                                    <audio controls>
+                                                            <source src=" /public/uploads/<%=infos.sample%>" type="audio/mpeg"> Your browser does not support the audio element.
+                                                        </audio>
+                                                        <br> <br>
+                                                    <div class="field is-grouped">
+                                                        <form id="uploadForm1" action="/accept" method="post" style="margin-right: 15%">
+                                                            <input type="hidden" name="username1" value="<%=infos.username%>">
+                                                            <input type="submit" class="button is-success" name="actionb" value="ACCEPT" />
+            
+                                                            
+                                                        </form>
+            
+                                                        <form id="uploadForm2" action="/delete" method="post" style="margin-left: 25%">
+                                                            <input type="hidden" name="username2" value="<%=infos.username%>">
+                                                            <input type="submit" class="button is-danger" name="actionb" value="DELETE" />
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                            </div>
+
+
+                            <%j++;
+                    } 
+                    else{%>
+
+
+                                <div class="column is-one-third">
+                                        <div class="card">
+                                                <div class="card-image">
+                                                    <figure class="image is-4by3">
+                                                        <img src="/public/uploads/<%= infos.image %>" alt="Placeholder image"> </figure>
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-left">
+                                                            <figure class="image is-48x48">
+                                                                <img src="/public/uploads/<%= infos.image %>" alt="Placeholder image">
+                                                            </figure>
+                                                        </div>
+                                                        <div class="media-content">
+                                                            <p class="title is-4">
+                                                                <%=infos.name%>
+                                                            </p>
+                                                            <p class="subtitle is-6">
+                                                                <%=infos.username%>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="content">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                                        <br>
+                                                        <br>
+                                                        <audio controls>
+                                                                <source src=" /public/uploads/<%=infos.sample%>" type="audio/mpeg"> Your browser does not support the audio element.
+                                                            </audio>
+                                                            <br> <br>
+                                                        <div class="field is-grouped">
+                                                            <form id="uploadForm1" action="/accept" method="post" style="margin-right: 15%">
+                                                                <input type="hidden" name="username1" value="<%=infos.username%>">
+                                                                <input type="submit" class="button is-success" name="actionb" value="ACCEPT" />
+                
+                                                                
+                                                            </form>
+                
+                                                            <form id="uploadForm2" action="/delete" method="post" style="margin-left: 25%">
+                                                                <input type="hidden" name="username2" value="<%=infos.username%>">
+                                                                <input type="submit" class="button is-danger" name="actionb" value="DELETE" />
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                </div>
+                    </div>
+
+
+                    <%j=0;}%>
+                        <%}})%>
+
+                            <%- include _footer %>
